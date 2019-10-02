@@ -42,6 +42,10 @@ namespace Schleifen
             a = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Zweite Zahl eingeben");
             b = Convert.ToInt32(Console.ReadLine());
+            int Ergebnis_ggT = ggT(a, b);
+            int Ergebnis_kgV = kgV(a, b);
+            Console.WriteLine("Der ggT von {1} und {2} ist: {0}", Ergebnis_ggT, a, b);
+            Console.WriteLine("Der kgV von {1} und {2} ist: {0}", Ergebnis_kgV, a, b);
 
 
             r = 1;
@@ -53,5 +57,34 @@ namespace Schleifen
             }
             Console.WriteLine("Der ggT ist:{0}",a);
         }
-    }
+
+        static int ggT(int a0, int b0)
+        {
+            int r = 1;
+            while (r != 0)
+            {
+                r = a0 % b0;
+                a0 = b0;
+                b0 = r;
+            }
+            return a0;
+        }
+            static int kgV(int a1, int b1)
+            {
+            int r = 1;
+            int c, d;
+            c = a1; d = b1;
+            while(r != 0)
+            {
+                r = a1 % b1;
+                a1 = b1;
+                b1 = r;
+                   
+
+            }
+            return c * d / a1;
+             
+            }
+        }
 }
+
